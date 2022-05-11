@@ -1,0 +1,82 @@
+Codeshare logo
+ ShareSign UpLog In
+Apologies we're having trouble with your connection. Reconnecting...
+1
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+2
+jil@jil-VirtualBox:~$ man test
+3
+jil@jil-VirtualBox:~$ 
+4
+jil@jil-VirtualBox:~$ #! /bin/bash
+5
+jil@jil-VirtualBox:~$ sudo nano script.sh
+6
+[sudo] password for jil: 
+7
+jil@jil-VirtualBox:~$ sh script.sh
+8
+script.sh: 2: script.sh: scripting: not found
+9
+jil@jil-VirtualBox:~$ sudo nano script.sh
+10
+jil@jil-VirtualBox:~$ sh script.sh
+11
+scripting
+12
+jil@jil-VirtualBox:~$ chmod 777 script.sh
+13
+chmod: changing permissions of 'script.sh': Operation not permitted
+14
+jil@jil-VirtualBox:~$ sudo chmod 777 script.sh
+15
+[sudo] password for jil: 
+16
+jil@jil-VirtualBox:~$ 
+17
+jil@jil-VirtualBox:~$ sh script.sh
+18
+scripting
+19
+jil@jil-VirtualBox:~$ sudo nano script.sh
+20
+jil@jil-VirtualBox:~$ sh script.sh
+21
+scripting
+22
+script.sh: 3: script.sh: scripting: not found
+23
+script.sh: 3: script.sh: Variable: not found
+24
+jil@jil-VirtualBox:~$ sudo nano script.sh
+25
+jil@jil-VirtualBox:~$ sh script.sh
+26
+scripting
+27
+script.sh: 3: script.sh: scripting: not found
+28
+jil@jil-VirtualBox:~$ sudo nano script.sh
+29
+jil@jil-VirtualBox:~$ sh script.sh
+30
+script.sh: 2: script.sh: scripting: not found
+31
+​
+32
+jil@jil-VirtualBox:~$ sudo nano script.sh
+33
+Use "fg" to return to nano.
+34
+​
+35
+[2]+  Stopped                 sudo nano script.sh
+36
+jil@jil-VirtualBox:~$ sh script.sh
+37
+script.sh: 3: script.sh: V: not found
+38
+​
+39
+jil@jil-VirtualBox:~$ sudo nano script.sh
+40

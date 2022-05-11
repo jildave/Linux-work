@@ -1,0 +1,1675 @@
+jil@jil-VirtualBox:~$ sudo apt-get install mdadm
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  default-mta | mail-transport-agent dracut-core
+The following NEW packages will be installed:
+  mdadm
+0 upgraded, 1 newly installed, 0 to remove and 366 not upgraded.
+Need to get 416 kB of archives.
+After this operation, 1,235 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 mdadm amd64 4.1~rc1-3~ubuntu18.04.4 [416 kB]
+Fetched 416 kB in 1s (780 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mdadm.
+(Reading database ... 127243 files and directories currently installed.)
+Preparing to unpack .../mdadm_4.1~rc1-3~ubuntu18.04.4_amd64.deb ...
+Unpacking mdadm (4.1~rc1-3~ubuntu18.04.4) ...
+Setting up mdadm (4.1~rc1-3~ubuntu18.04.4) ...
+Generating mdadm.conf... done.
+update-initramfs: deferring update (trigger activated)
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.0-42-generic
+Found initrd image: /boot/initrd.img-5.4.0-42-generic
+Found memtest86+ image: /boot/memtest86+.elf
+Found memtest86+ image: /boot/memtest86+.bin
+done
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for initramfs-tools (0.130ubuntu3.9) ...
+update-initramfs: Generating /boot/initrd.img-5.4.0-42-generic
+jil@jil-VirtualBox:~$ sudo fdisk -l
+Disk /dev/loop0: 2.4 MiB, 2555904 bytes, 4992 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 276 KiB, 282624 bytes, 552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop3: 956 KiB, 978944 bytes, 1912 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 255.6 MiB, 267980800 bytes, 523400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop5: 55.3 MiB, 58007552 bytes, 113296 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 62.1 MiB, 65105920 bytes, 127160 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 2.2 MiB, 2273280 bytes, 4440 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+Disk /dev/sda: 49.9 GiB, 53525184512 bytes, 104541376 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x95605c32
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/sda1  *     2048 104540159 104538112 49.9G 83 Linux
+
+
+Disk /dev/sdb: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop8: 44.7 MiB, 46845952 bytes, 91496 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 55.5 MiB, 58212352 bytes, 113696 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 61.9 MiB, 64909312 bytes, 126776 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 4 KiB, 4096 bytes, 8 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 2.5 MiB, 2658304 bytes, 5192 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop13: 2.6 MiB, 2748416 bytes, 5368 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop14: 704 KiB, 720896 bytes, 1408 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop15: 548 KiB, 561152 bytes, 1096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop16: 65.2 MiB, 68378624 bytes, 133552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop17: 219 MiB, 229638144 bytes, 448512 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop18: 248.8 MiB, 260841472 bytes, 509456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+jil@jil-VirtualBox:~$ sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1
+mdadm: cannot open /dev/sda1: Device or resource busy
+jil@jil-VirtualBox:~$ w
+ 17:43:11 up 12 min,  1 user,  load average: 0.03, 0.20, 0.30
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jil      :1       :1               17:30   ?xdm?  47.67s  0.00s /usr/lib/gdm3/
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo apt-get install samba
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libldb1 libnl-route-3-200
+  libpython-stdlib libpython2.7 libpython2.7-minimal libpython2.7-stdlib
+  librados2 libsmbclient libwbclient0 python python-crypto python-dnspython
+  python-ldb python-minimal python-samba python-tdb python2.7
+  python2.7-minimal samba-common samba-common-bin samba-dsdb-modules
+  samba-libs samba-vfs-modules tdb-tools
+Suggested packages:
+  python-doc python-tk python-crypto-doc python-gpgme python2.7-doc
+  binfmt-support bind9 bind9utils ctdb ldb-tools ntp | chrony smbldap-tools
+  winbind heimdal-clients
+The following NEW packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libnl-route-3-200
+  libpython-stdlib librados2 python python-crypto python-dnspython python-ldb
+  python-minimal python-samba python-tdb python2.7 python2.7-minimal samba
+  samba-common samba-common-bin samba-dsdb-modules samba-vfs-modules
+  tdb-tools
+The following packages will be upgraded:
+  libldb1 libpython2.7 libpython2.7-minimal libpython2.7-stdlib libsmbclient
+  libwbclient0 samba-libs
+7 upgraded, 22 newly installed, 0 to remove and 359 not upgraded.
+Need to get 5,450 kB/18.3 MB of archives.
+After this operation, 52.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-minimal amd64 2.7.15~rc1-1 [28.1 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libpython-stdlib amd64 2.7.15~rc1-1 [7,620 B]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python amd64 2.7.15~rc1-1 [140 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-dnspython all 1.15.0-1 [84.9 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-crypto amd64 2.6.1-8ubuntu2 [244 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-tdb amd64 1.3.15-2 [11.1 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 tdb-tools amd64 1.3.15-2 [22.4 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [855 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 attr amd64 1:2.4.47-2build1 [25.8 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libnl-route-3-200 amd64 3.2.29-0ubuntu3 [146 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libibverbs1 amd64 17.1-1ubuntu0.2 [44.4 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ibverbs-providers amd64 17.1-1ubuntu0.2 [160 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 librados2 amd64 12.2.13-0ubuntu0.18.04.10 [2,725 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcephfs2 amd64 12.2.13-0ubuntu0.18.04.10 [413 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba-dsdb-modules amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [245 kB]
+Get:16 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba-vfs-modules amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [298 kB]
+Fetched 5,450 kB in 2s (3,528 kB/s)     
+Preconfiguring packages ...
+(Reading database ... 127322 files and directories currently installed.)
+Preparing to unpack .../00-libldb1_2%3a1.2.3-1ubuntu0.2_amd64.deb ...
+Unpacking libldb1:amd64 (2:1.2.3-1ubuntu0.2) over (2:1.2.3-1ubuntu0.1) ...
+Preparing to unpack .../01-libsmbclient_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking libsmbclient:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Preparing to unpack .../02-libpython2.7_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../03-libpython2.7-stdlib_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../04-libpython2.7-minimal_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../05-samba-libs_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-libs:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Preparing to unpack .../06-libwbclient0_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking libwbclient0:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../07-python2.7-minimal_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking python2.7-minimal (2.7.17-1~18.04ubuntu1.7) ...
+Selecting previously unselected package python-minimal.
+Preparing to unpack .../08-python-minimal_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../09-python2.7_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking python2.7 (2.7.17-1~18.04ubuntu1.7) ...
+Selecting previously unselected package libpython-stdlib:amd64.
+Preparing to unpack .../10-libpython-stdlib_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up libpython2.7-minimal:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up python2.7-minimal (2.7.17-1~18.04ubuntu1.7) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python.
+(Reading database ... 127379 files and directories currently installed.)
+Preparing to unpack .../00-python_2.7.15~rc1-1_amd64.deb ...
+Unpacking python (2.7.15~rc1-1) ...
+Selecting previously unselected package python-dnspython.
+Preparing to unpack .../01-python-dnspython_1.15.0-1_all.deb ...
+Unpacking python-dnspython (1.15.0-1) ...
+Selecting previously unselected package python-crypto.
+Preparing to unpack .../02-python-crypto_2.6.1-8ubuntu2_amd64.deb ...
+Unpacking python-crypto (2.6.1-8ubuntu2) ...
+Selecting previously unselected package python-ldb:amd64.
+Preparing to unpack .../03-python-ldb_2%3a1.2.3-1ubuntu0.2_amd64.deb ...
+Unpacking python-ldb:amd64 (2:1.2.3-1ubuntu0.2) ...
+Selecting previously unselected package python-tdb.
+Preparing to unpack .../04-python-tdb_1.3.15-2_amd64.deb ...
+Unpacking python-tdb (1.3.15-2) ...
+Selecting previously unselected package python-samba.
+Preparing to unpack .../05-python-samba_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking python-samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-common.
+Preparing to unpack .../06-samba-common_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_all.deb ...
+Unpacking samba-common (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-common-bin.
+Preparing to unpack .../07-samba-common-bin_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-common-bin (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package tdb-tools.
+Preparing to unpack .../08-tdb-tools_1.3.15-2_amd64.deb ...
+Unpacking tdb-tools (1.3.15-2) ...
+Selecting previously unselected package samba.
+Preparing to unpack .../09-samba_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package attr.
+Preparing to unpack .../10-attr_1%3a2.4.47-2build1_amd64.deb ...
+Unpacking attr (1:2.4.47-2build1) ...
+Selecting previously unselected package libnl-route-3-200:amd64.
+Preparing to unpack .../11-libnl-route-3-200_3.2.29-0ubuntu3_amd64.deb ...
+Unpacking libnl-route-3-200:amd64 (3.2.29-0ubuntu3) ...
+Selecting previously unselected package libibverbs1:amd64.
+Preparing to unpack .../12-libibverbs1_17.1-1ubuntu0.2_amd64.deb ...
+Unpacking libibverbs1:amd64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package ibverbs-providers:amd64.
+Preparing to unpack .../13-ibverbs-providers_17.1-1ubuntu0.2_amd64.deb ...
+Unpacking ibverbs-providers:amd64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package librados2.
+Preparing to unpack .../14-librados2_12.2.13-0ubuntu0.18.04.10_amd64.deb ...
+Unpacking librados2 (12.2.13-0ubuntu0.18.04.10) ...
+Selecting previously unselected package libcephfs2.
+Preparing to unpack .../15-libcephfs2_12.2.13-0ubuntu0.18.04.10_amd64.deb ...
+Unpacking libcephfs2 (12.2.13-0ubuntu0.18.04.10) ...
+Selecting previously unselected package samba-dsdb-modules.
+Preparing to unpack .../16-samba-dsdb-modules_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-dsdb-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-vfs-modules.
+Preparing to unpack .../17-samba-vfs-modules_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-vfs-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libwbclient0:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libldb1:amd64 (2:1.2.3-1ubuntu0.2) ...
+Setting up samba-common (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+
+Creating config file /etc/samba/smb.conf with new version
+Setting up libnl-route-3-200:amd64 (3.2.29-0ubuntu3) ...
+Setting up tdb-tools (1.3.15-2) ...
+update-alternatives: using /usr/bin/tdbbackup.tdbtools to provide /usr/bin/tdbbackup (tdbbackup) in auto mode
+Setting up attr (1:2.4.47-2build1) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up libibverbs1:amd64 (17.1-1ubuntu0.2) ...
+Setting up python2.7 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up librados2 (12.2.13-0ubuntu0.18.04.10) ...
+Setting up libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up libcephfs2 (12.2.13-0ubuntu0.18.04.10) ...
+Setting up ibverbs-providers:amd64 (17.1-1ubuntu0.2) ...
+Setting up libpython2.7:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up python (2.7.15~rc1-1) ...
+Setting up python-ldb:amd64 (2:1.2.3-1ubuntu0.2) ...
+Setting up python-dnspython (1.15.0-1) ...
+Setting up python-crypto (2.6.1-8ubuntu2) ...
+Setting up samba-libs:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-vfs-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up python-tdb (1.3.15-2) ...
+Setting up python-samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libsmbclient:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-common-bin (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-dsdb-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Samba is not being run as an AD Domain Controller, masking samba-ad-dc.service.
+Please ignore the following error about deb-systemd-helper not finding samba-ad-dc.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/nmbd.service → /lib/systemd/system/nmbd.service.
+Failed to preset unit: Unit file /etc/systemd/system/samba-ad-dc.service is masked.
+/usr/bin/deb-systemd-helper: error: systemctl preset failed on samba-ad-dc.service: No such file or directory
+Created symlink /etc/systemd/system/multi-user.target.wants/smbd.service → /lib/systemd/system/smbd.service.
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo service smbd start
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo service nmbd start
+jil@jil-VirtualBox:~$ sudo service smbd start
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo nano /etc/samba/smb.conf
+jil@jil-VirtualBox:~$ cd etc
+bash: cd: etc: No such file or directory
+jil@jil-VirtualBox:~$ cd /etc
+jil@jil-VirtualBox:/etc$ cd cron.daily
+jil@jil-VirtualBox:/etc/cron.daily$ 
+jil@jil-VirtualBox:/etc/cron.daily$ crontab -l
+no crontab for jil
+jil@jil-VirtualBox:/etc/cron.daily$ crontab -e
+no crontab for jil - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.tiny
+  3. /bin/ed
+
+Choose 1-3 [1]: 1
+No modification made
+jil@jil-VirtualBox:/etc/cron.daily$ cd ~
+jil@jil-VirtualBox:~$ sudo apt-get update
+[sudo] password for jil: 
+Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB] 
+Hit:2 http://in.archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]  
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/main amd64 DEP-11 Metadata [55.2 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [2,545 kB]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 DEP-11 Metadata [59.9 kB]
+Get:8 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 DEP-11 Metadata [2,464 B]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic-updates/main i386 Packages [1,464 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 DEP-11 Metadata [297 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1,806 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe i386 Packages [1,606 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [391 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 DEP-11 Metadata [301 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 DEP-11 Metadata [2,468 B]
+Get:16 http://in.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 DEP-11 Metadata [9,264 B]
+Fetched 8,792 kB in 55s (161 kB/s)                                            
+Reading package lists... Done
+jil@jil-VirtualBox:~$ sudo apt-get install apach2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package apach2
+jil@jil-VirtualBox:~$ sudo apt-get install apache2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+0 upgraded, 9 newly installed, 0 to remove and 359 not upgraded.
+Need to get 1,713 kB of archives.
+After this operation, 6,932 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libapr1 amd64 1.6.3-2 [90.9 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1 amd64 1.6.1-2 [84.4 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-2 [10.6 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-ldap amd64 1.6.1-2 [8,764 B]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-bin amd64 2.4.29-1ubuntu4.22 [1,071 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-utils amd64 2.4.29-1ubuntu4.22 [84.0 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-data all 2.4.29-1ubuntu4.22 [160 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2 amd64 2.4.29-1ubuntu4.22 [95.1 kB]
+Fetched 1,713 kB in 7s (235 kB/s)                                             
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 128451 files and directories currently installed.)
+Preparing to unpack .../0-libapr1_1.6.3-2_amd64.deb ...
+Unpacking libapr1:amd64 (1.6.3-2) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../1-libaprutil1_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../3-libaprutil1-ldap_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.1-2) ...
+Selecting previously unselected package liblua5.2-0:amd64.
+Preparing to unpack .../4-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...
+Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../5-apache2-bin_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2-bin (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../6-apache2-utils_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2-utils (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../7-apache2-data_2.4.29-1ubuntu4.22_all.deb ...
+Unpacking apache2-data (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../8-apache2_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2 (2.4.29-1ubuntu4.22) ...
+Setting up libapr1:amd64 (1.6.3-2) ...
+Setting up apache2-data (2.4.29-1ubuntu4.22) ...
+Setting up libaprutil1:amd64 (1.6.1-2) ...
+Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-2) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Setting up apache2-utils (2.4.29-1ubuntu4.22) ...
+Setting up apache2-bin (2.4.29-1ubuntu4.22) ...
+Setting up apache2 (2.4.29-1ubuntu4.22) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+jil@jil-VirtualBox:~$ ifconfig
+
+Command 'ifconfig' not found, but can be installed with:
+
+sudo apt install net-tools
+
+jil@jil-VirtualBox:~$ sudo apt install net-tools
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 359 not upgraded.
+Need to get 194 kB of archives.
+After this operation, 803 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 net-tools amd64 1.60+git20161116.90da8a0-1ubuntu1 [194 kB]
+Fetched 194 kB in 3s (63.0 kB/s)   
+Selecting previously unselected package net-tools.
+(Reading database ... 129157 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20161116.90da8a0-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+Setting up net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+jil@jil-VirtualBox:~$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::7f18:bf6f:28fc:ddca  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:fd:6b:61  txqueuelen 1000  (Ethernet)
+        RX packets 380328  bytes 566875260 (566.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24759  bytes 1819395 (1.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1644  bytes 143916 (143.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1644  bytes 143916 (143.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+jil@jil-VirtualBox:~$ sudo apt-get install links
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  links
+0 upgraded, 1 newly installed, 0 to remove and 359 not upgraded.
+Need to get 499 kB of archives.
+After this operation, 2,142 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 links amd64 2.14-5build1 [499 kB]
+Fetched 499 kB in 2s (216 kB/s)
+Selecting previously unselected package links.
+(Reading database ... 129205 files and directories currently installed.)
+Preparing to unpack .../links_2.14-5build1_amd64.deb ...
+Unpacking links (2.14-5build1) ...
+Setting up links (2.14-5build1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+jil@jil-VirtualBox:~$ links
+
+                                     Best Linux Projects for Newbies (p1 of 7) 
+   Link: profile                                                               
+   Link: canonical                                                             
+   Link: shortlink                                                             
+   [IMG][IMG]                                                                  
+     * Home                                                                    
+     * Learning                                                                
+     * Subscribe!                                                              
+     * Write For Us                                                            
+     * Privacy                                                                 
+     * Terms                                                                   
+     *    * pe here to search..._ [ Submit ]                                   
+   Best of Linux                                                               
+                                                                               
+                        Best Linux Projects for Newbies                        
+                                                                               
+   2 years ago                                                                 
+   by David Morelo                                                             
+   Some people enjoy learning from books, and others like to gain knowledge    
+   and experience by working on interesting projects. If you belong to the     
+   latter category and you're new to Linux, our selection of the top 5 best    
+   Linux projects for newbies is just what you need to take your skills to     
+   the next level.                                                             
+                                                                               
+  1. Use Linux on Your Personal Computer                                       
+                                                                               
+   [IMG][IMG]                                                                  
+https://gmpg.org/xfn/11                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ fg links
+links
+
+                                     Best Linux Projects for Newbies (p1 of 7) 
+   Link: profile                                                               
+   Link: canonical                                                             
+   Link: shortlink                                                             
+   [IMG][IMG]                                                                  
+     * Home                                                                    
+     * Learning                                                                
+     * Subscribe!                                                              
+     * Write For Us                                                            
+     * Privacy                                                                 
+     * Terms                                                                   
+     *    * pe here to search..._ [ Submit ]                                   
+   Best of Linux                                                               
+                                                                               
+                        Best Linux Projects for Newbies                        
+                                                                               
+   2 years ago                                                                 
+   by David Morelo                                                             
+   Some people enjoy learning from books, and others like to gain knowledge    
+   and experience by working on interesting projects. If you belong to the     
+   latter category and you're new to Linux, our selection of the top 5 best    
+   Linux projects for newbies is just what you need to take your skills to     
+   the next level.                                                             
+                                                                               
+  1. Use Linux on Your Personal Computer                                       
+                                                                               
+   [IMG][IMG]                                                                  
+https://gmpg.org/xfn/11                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ fortune
+
+Command 'fortune' not found, but can be installed with:
+
+sudo apt install fortune-mod
+
+jil@jil-VirtualBox:~$ sudo apt install fortune-mod
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  fortunes-min librecode0
+Suggested packages:
+  fortunes
+The following NEW packages will be installed:
+  fortune-mod fortunes-min librecode0
+0 upgraded, 3 newly installed, 0 to remove and 359 not upgraded.
+Need to get 621 kB of archives.
+After this operation, 2,131 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 librecode0 amd64 3.6-23 [528 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 fortune-mod amd64 1:1.99.1-7build1 [37.3 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 fortunes-min all 1:1.99.1-7build1 [55.1 kB]
+Fetched 621 kB in 7s (94.6 kB/s)                                              
+Selecting previously unselected package librecode0:amd64.
+(Reading database ... 129212 files and directories currently installed.)
+Preparing to unpack .../librecode0_3.6-23_amd64.deb ...
+Unpacking librecode0:amd64 (3.6-23) ...
+Selecting previously unselected package fortune-mod.
+Preparing to unpack .../fortune-mod_1%3a1.99.1-7build1_amd64.deb ...
+Unpacking fortune-mod (1:1.99.1-7build1) ...
+Selecting previously unselected package fortunes-min.
+Preparing to unpack .../fortunes-min_1%3a1.99.1-7build1_all.deb ...
+Unpacking fortunes-min (1:1.99.1-7build1) ...
+Setting up fortunes-min (1:1.99.1-7build1) ...
+Setting up librecode0:amd64 (3.6-23) ...
+Setting up fortune-mod (1:1.99.1-7build1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+jil@jil-VirtualBox:~$ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.740_all.deb
+--2022-05-09 21:59:55--  http://prdownloads.sourceforge.net/webadmin/webmin_1.740_all.deb
+Resolving prdownloads.sourceforge.net (prdownloads.sourceforge.net)... 204.68.111.105
+Connecting to prdownloads.sourceforge.net (prdownloads.sourceforge.net)|204.68.111.105|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://downloads.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb [following]
+--2022-05-09 21:59:56--  http://downloads.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 204.68.111.105
+Reusing existing connection to prdownloads.sourceforge.net:80.
+HTTP request sent, awaiting response... 302 Found
+Location: http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb [following]
+--2022-05-09 21:59:56--  http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Resolving versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)... 162.251.232.173
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 24578284 (23M) [application/octet-stream]
+Saving to: ‘webmin_1.740_all.deb’
+
+webmin_1.740_all.de  76%[=============>     ]  17.93M  18.6KB/s    in 2m 28s  
+
+2022-05-09 22:02:26 (124 KB/s) - Read error at byte 18798879/24578284 (Connection reset by peer). Retrying.
+
+--2022-05-09 22:02:27--  (try: 2)  http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:80... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 24578284 (23M), 5779405 (5.5M) remaining [application/octet-stream]
+Saving to: ‘webmin_1.740_all.deb’
+
+webmin_1.740_all.de 100%[++++++++++++++====>]  23.44M   133KB/s    in 53s     
+
+2022-05-09 22:03:22 (107 KB/s) - ‘webmin_1.740_all.deb’ saved [24578284/24578284]
+
+jil@jil-VirtualBox:~$ ls
+Desktop    Downloads         Music     Public     Videos
+Documents  examples.desktop  Pictures  Templates  webmin_1.740_all.deb
+jil@jil-VirtualBox:~$ sudo nano
+[sudo] password for jil: 
+jil@jil-VirtualBox:~$ 
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+16170 pts/0    00:00:01 links
+17129 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ fg links
+links
+
+                                 cool linux projects - Google Search (p1 of 2) 
+   Google                                                                      
+                                                                               
+   cool linux projects__ [ Search ]                                            
+                                                                               
+   ALL IMAGES NEWS VIDEOS                                                      
+                                                                               
+   linux terminal emulatorfedoramintcomputercommandeditorstext editorfedora    
+   linuxcommand linecommand prompt                                             
+                                                                               
+[IMG]                   [IMG]                          [IMG]                   
+Best Linux Projects     Top 5 Coolest Projects For...  Top 5 Coolest Projects  
+for... linuxhint.com    www.linuxfordevices.com        For...                  
+                                                       www.linuxfordevices.com 
+[IMG]                   [IMG]                          [IMG]                   
+Top 5 Coolest Projects  Top 15 Linux Projects For...   Top 5 Coolest Projects  
+For...                  www.cselectricalandelectron... For...                  
+www.linuxfordevices.com                                www.linuxfordevices.com 
+[IMG]                   [IMG]                          [IMG]                   
+Linux Toys: 13 Cool...  4 easy Linux projects for...   The Best Linux          
+www.wiley.com           www.pcworld.com                Tutorials               
+                                                       www.freecodecamp.org    
+[IMG]                   [IMG]                          [IMG]                   
+Cool Linux Projects     11 Best Linux Distros For...   Linux� Toys: 13 Cool... 
+that... www.reddit.com  fossbytes.com                  www.amazon.in           
+                                                                               
+[IMG]                   [IMG]                          [IMG]                   
+https://www.google.co.in/url?q=https://linuxhint.com/best_linux_projects_newbi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+16170 pts/0    00:00:01 links
+17132 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ sudo kill -9 16170
+[1]+  Killed                  links
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+17137 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ sudo samba service restart
+[sudo] password for jil: 
+jil@jil-VirtualBox:~$ sudo service samba restart
+Failed to restart samba.service: Unit samba.service not found.
+jil@jil-VirtualBox:~$ 12345678
+12345678: command not found
+jil@jil-VirtualBox:~$ sudo service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ ^C
+jil@jil-VirtualBox:~$ ^C
+jil@jil-VirtualBox:~$ 
+jil@jil-VirtualBox:~$ sudo apt-get install mdadm
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  default-mta | mail-transport-agent dracut-core
+The following NEW packages will be installed:
+  mdadm
+0 upgraded, 1 newly installed, 0 to remove and 366 not upgraded.
+Need to get 416 kB of archives.
+After this operation, 1,235 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 mdadm amd64 4.1~rc1-3~ubuntu18.04.4 [416 kB]
+Fetched 416 kB in 1s (780 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mdadm.
+(Reading database ... 127243 files and directories currently installed.)
+Preparing to unpack .../mdadm_4.1~rc1-3~ubuntu18.04.4_amd64.deb ...
+Unpacking mdadm (4.1~rc1-3~ubuntu18.04.4) ...
+Setting up mdadm (4.1~rc1-3~ubuntu18.04.4) ...
+Generating mdadm.conf... done.
+update-initramfs: deferring update (trigger activated)
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.0-42-generic
+Found initrd image: /boot/initrd.img-5.4.0-42-generic
+Found memtest86+ image: /boot/memtest86+.elf
+Found memtest86+ image: /boot/memtest86+.bin
+done
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for initramfs-tools (0.130ubuntu3.9) ...
+update-initramfs: Generating /boot/initrd.img-5.4.0-42-generic
+jil@jil-VirtualBox:~$ sudo fdisk -l
+Disk /dev/loop0: 2.4 MiB, 2555904 bytes, 4992 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 276 KiB, 282624 bytes, 552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop3: 956 KiB, 978944 bytes, 1912 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 255.6 MiB, 267980800 bytes, 523400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop5: 55.3 MiB, 58007552 bytes, 113296 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 62.1 MiB, 65105920 bytes, 127160 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 2.2 MiB, 2273280 bytes, 4440 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+Disk /dev/sda: 49.9 GiB, 53525184512 bytes, 104541376 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x95605c32
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/sda1  *     2048 104540159 104538112 49.9G 83 Linux
+
+
+Disk /dev/sdb: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop8: 44.7 MiB, 46845952 bytes, 91496 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 55.5 MiB, 58212352 bytes, 113696 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 61.9 MiB, 64909312 bytes, 126776 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 4 KiB, 4096 bytes, 8 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 2.5 MiB, 2658304 bytes, 5192 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop13: 2.6 MiB, 2748416 bytes, 5368 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop14: 704 KiB, 720896 bytes, 1408 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop15: 548 KiB, 561152 bytes, 1096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop16: 65.2 MiB, 68378624 bytes, 133552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop17: 219 MiB, 229638144 bytes, 448512 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop18: 248.8 MiB, 260841472 bytes, 509456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+jil@jil-VirtualBox:~$ sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1
+mdadm: cannot open /dev/sda1: Device or resource busy
+jil@jil-VirtualBox:~$ w
+ 17:43:11 up 12 min,  1 user,  load average: 0.03, 0.20, 0.30
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jil      :1       :1               17:30   ?xdm?  47.67s  0.00s /usr/lib/gdm3/
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo apt-get install samba
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libldb1 libnl-route-3-200
+  libpython-stdlib libpython2.7 libpython2.7-minimal libpython2.7-stdlib
+  librados2 libsmbclient libwbclient0 python python-crypto python-dnspython
+  python-ldb python-minimal python-samba python-tdb python2.7
+  python2.7-minimal samba-common samba-common-bin samba-dsdb-modules
+  samba-libs samba-vfs-modules tdb-tools
+Suggested packages:
+  python-doc python-tk python-crypto-doc python-gpgme python2.7-doc
+  binfmt-support bind9 bind9utils ctdb ldb-tools ntp | chrony smbldap-tools
+  winbind heimdal-clients
+The following NEW packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libnl-route-3-200
+  libpython-stdlib librados2 python python-crypto python-dnspython python-ldb
+  python-minimal python-samba python-tdb python2.7 python2.7-minimal samba
+  samba-common samba-common-bin samba-dsdb-modules samba-vfs-modules
+  tdb-tools
+The following packages will be upgraded:
+  libldb1 libpython2.7 libpython2.7-minimal libpython2.7-stdlib libsmbclient
+  libwbclient0 samba-libs
+7 upgraded, 22 newly installed, 0 to remove and 359 not upgraded.
+Need to get 5,450 kB/18.3 MB of archives.
+After this operation, 52.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-minimal amd64 2.7.15~rc1-1 [28.1 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libpython-stdlib amd64 2.7.15~rc1-1 [7,620 B]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python amd64 2.7.15~rc1-1 [140 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-dnspython all 1.15.0-1 [84.9 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-crypto amd64 2.6.1-8ubuntu2 [244 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 python-tdb amd64 1.3.15-2 [11.1 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 tdb-tools amd64 1.3.15-2 [22.4 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [855 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 attr amd64 1:2.4.47-2build1 [25.8 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libnl-route-3-200 amd64 3.2.29-0ubuntu3 [146 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libibverbs1 amd64 17.1-1ubuntu0.2 [44.4 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ibverbs-providers amd64 17.1-1ubuntu0.2 [160 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 librados2 amd64 12.2.13-0ubuntu0.18.04.10 [2,725 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcephfs2 amd64 12.2.13-0ubuntu0.18.04.10 [413 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba-dsdb-modules amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [245 kB]
+Get:16 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 samba-vfs-modules amd64 2:4.7.6+dfsg~ubuntu-0ubuntu2.28 [298 kB]
+Fetched 5,450 kB in 2s (3,528 kB/s)     
+Preconfiguring packages ...
+(Reading database ... 127322 files and directories currently installed.)
+Preparing to unpack .../00-libldb1_2%3a1.2.3-1ubuntu0.2_amd64.deb ...
+Unpacking libldb1:amd64 (2:1.2.3-1ubuntu0.2) over (2:1.2.3-1ubuntu0.1) ...
+Preparing to unpack .../01-libsmbclient_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking libsmbclient:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Preparing to unpack .../02-libpython2.7_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../03-libpython2.7-stdlib_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../04-libpython2.7-minimal_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.17-1~18.04ubuntu1.7) over (2.7.17-1~18.04ubuntu1.1) ...
+Preparing to unpack .../05-samba-libs_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-libs:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Preparing to unpack .../06-libwbclient0_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking libwbclient0:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) over (2:4.7.6+dfsg~ubuntu-0ubuntu2.17) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../07-python2.7-minimal_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking python2.7-minimal (2.7.17-1~18.04ubuntu1.7) ...
+Selecting previously unselected package python-minimal.
+Preparing to unpack .../08-python-minimal_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../09-python2.7_2.7.17-1~18.04ubuntu1.7_amd64.deb ...
+Unpacking python2.7 (2.7.17-1~18.04ubuntu1.7) ...
+Selecting previously unselected package libpython-stdlib:amd64.
+Preparing to unpack .../10-libpython-stdlib_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up libpython2.7-minimal:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up python2.7-minimal (2.7.17-1~18.04ubuntu1.7) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python.
+(Reading database ... 127379 files and directories currently installed.)
+Preparing to unpack .../00-python_2.7.15~rc1-1_amd64.deb ...
+Unpacking python (2.7.15~rc1-1) ...
+Selecting previously unselected package python-dnspython.
+Preparing to unpack .../01-python-dnspython_1.15.0-1_all.deb ...
+Unpacking python-dnspython (1.15.0-1) ...
+Selecting previously unselected package python-crypto.
+Preparing to unpack .../02-python-crypto_2.6.1-8ubuntu2_amd64.deb ...
+Unpacking python-crypto (2.6.1-8ubuntu2) ...
+Selecting previously unselected package python-ldb:amd64.
+Preparing to unpack .../03-python-ldb_2%3a1.2.3-1ubuntu0.2_amd64.deb ...
+Unpacking python-ldb:amd64 (2:1.2.3-1ubuntu0.2) ...
+Selecting previously unselected package python-tdb.
+Preparing to unpack .../04-python-tdb_1.3.15-2_amd64.deb ...
+Unpacking python-tdb (1.3.15-2) ...
+Selecting previously unselected package python-samba.
+Preparing to unpack .../05-python-samba_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking python-samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-common.
+Preparing to unpack .../06-samba-common_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_all.deb ...
+Unpacking samba-common (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-common-bin.
+Preparing to unpack .../07-samba-common-bin_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-common-bin (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package tdb-tools.
+Preparing to unpack .../08-tdb-tools_1.3.15-2_amd64.deb ...
+Unpacking tdb-tools (1.3.15-2) ...
+Selecting previously unselected package samba.
+Preparing to unpack .../09-samba_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package attr.
+Preparing to unpack .../10-attr_1%3a2.4.47-2build1_amd64.deb ...
+Unpacking attr (1:2.4.47-2build1) ...
+Selecting previously unselected package libnl-route-3-200:amd64.
+Preparing to unpack .../11-libnl-route-3-200_3.2.29-0ubuntu3_amd64.deb ...
+Unpacking libnl-route-3-200:amd64 (3.2.29-0ubuntu3) ...
+Selecting previously unselected package libibverbs1:amd64.
+Preparing to unpack .../12-libibverbs1_17.1-1ubuntu0.2_amd64.deb ...
+Unpacking libibverbs1:amd64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package ibverbs-providers:amd64.
+Preparing to unpack .../13-ibverbs-providers_17.1-1ubuntu0.2_amd64.deb ...
+Unpacking ibverbs-providers:amd64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package librados2.
+Preparing to unpack .../14-librados2_12.2.13-0ubuntu0.18.04.10_amd64.deb ...
+Unpacking librados2 (12.2.13-0ubuntu0.18.04.10) ...
+Selecting previously unselected package libcephfs2.
+Preparing to unpack .../15-libcephfs2_12.2.13-0ubuntu0.18.04.10_amd64.deb ...
+Unpacking libcephfs2 (12.2.13-0ubuntu0.18.04.10) ...
+Selecting previously unselected package samba-dsdb-modules.
+Preparing to unpack .../16-samba-dsdb-modules_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-dsdb-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Selecting previously unselected package samba-vfs-modules.
+Preparing to unpack .../17-samba-vfs-modules_2%3a4.7.6+dfsg~ubuntu-0ubuntu2.28_amd64.deb ...
+Unpacking samba-vfs-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libwbclient0:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libldb1:amd64 (2:1.2.3-1ubuntu0.2) ...
+Setting up samba-common (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+
+Creating config file /etc/samba/smb.conf with new version
+Setting up libnl-route-3-200:amd64 (3.2.29-0ubuntu3) ...
+Setting up tdb-tools (1.3.15-2) ...
+update-alternatives: using /usr/bin/tdbbackup.tdbtools to provide /usr/bin/tdbbackup (tdbbackup) in auto mode
+Setting up attr (1:2.4.47-2build1) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up libibverbs1:amd64 (17.1-1ubuntu0.2) ...
+Setting up python2.7 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up librados2 (12.2.13-0ubuntu0.18.04.10) ...
+Setting up libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up libcephfs2 (12.2.13-0ubuntu0.18.04.10) ...
+Setting up ibverbs-providers:amd64 (17.1-1ubuntu0.2) ...
+Setting up libpython2.7:amd64 (2.7.17-1~18.04ubuntu1.7) ...
+Setting up python (2.7.15~rc1-1) ...
+Setting up python-ldb:amd64 (2:1.2.3-1ubuntu0.2) ...
+Setting up python-dnspython (1.15.0-1) ...
+Setting up python-crypto (2.6.1-8ubuntu2) ...
+Setting up samba-libs:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-vfs-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up python-tdb (1.3.15-2) ...
+Setting up python-samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up libsmbclient:amd64 (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-common-bin (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba-dsdb-modules (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Setting up samba (2:4.7.6+dfsg~ubuntu-0ubuntu2.28) ...
+Samba is not being run as an AD Domain Controller, masking samba-ad-dc.service.
+Please ignore the following error about deb-systemd-helper not finding samba-ad-dc.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/nmbd.service → /lib/systemd/system/nmbd.service.
+Failed to preset unit: Unit file /etc/systemd/system/samba-ad-dc.service is masked.
+/usr/bin/deb-systemd-helper: error: systemctl preset failed on samba-ad-dc.service: No such file or directory
+Created symlink /etc/systemd/system/multi-user.target.wants/smbd.service → /lib/systemd/system/smbd.service.
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo service smbd start
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo service nmbd start
+jil@jil-VirtualBox:~$ sudo service smbd start
+jil@jil-VirtualBox:~$ service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ sudo nano /etc/samba/smb.conf
+jil@jil-VirtualBox:~$ cd etc
+bash: cd: etc: No such file or directory
+jil@jil-VirtualBox:~$ cd /etc
+jil@jil-VirtualBox:/etc$ cd cron.daily
+jil@jil-VirtualBox:/etc/cron.daily$ 
+jil@jil-VirtualBox:/etc/cron.daily$ crontab -l
+no crontab for jil
+jil@jil-VirtualBox:/etc/cron.daily$ crontab -e
+no crontab for jil - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.tiny
+  3. /bin/ed
+
+Choose 1-3 [1]: 1
+No modification made
+jil@jil-VirtualBox:/etc/cron.daily$ cd ~
+jil@jil-VirtualBox:~$ sudo apt-get update
+[sudo] password for jil: 
+Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB] 
+Hit:2 http://in.archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]  
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/main amd64 DEP-11 Metadata [55.2 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [2,545 kB]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 DEP-11 Metadata [59.9 kB]
+Get:8 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 DEP-11 Metadata [2,464 B]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic-updates/main i386 Packages [1,464 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 DEP-11 Metadata [297 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1,806 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe i386 Packages [1,606 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [391 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 DEP-11 Metadata [301 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 DEP-11 Metadata [2,468 B]
+Get:16 http://in.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 DEP-11 Metadata [9,264 B]
+Fetched 8,792 kB in 55s (161 kB/s)                                            
+Reading package lists... Done
+jil@jil-VirtualBox:~$ sudo apt-get install apach2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package apach2
+jil@jil-VirtualBox:~$ sudo apt-get install apache2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+0 upgraded, 9 newly installed, 0 to remove and 359 not upgraded.
+Need to get 1,713 kB of archives.
+After this operation, 6,932 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libapr1 amd64 1.6.3-2 [90.9 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1 amd64 1.6.1-2 [84.4 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-2 [10.6 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-ldap amd64 1.6.1-2 [8,764 B]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-bin amd64 2.4.29-1ubuntu4.22 [1,071 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-utils amd64 2.4.29-1ubuntu4.22 [84.0 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-data all 2.4.29-1ubuntu4.22 [160 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2 amd64 2.4.29-1ubuntu4.22 [95.1 kB]
+Fetched 1,713 kB in 7s (235 kB/s)                                             
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 128451 files and directories currently installed.)
+Preparing to unpack .../0-libapr1_1.6.3-2_amd64.deb ...
+Unpacking libapr1:amd64 (1.6.3-2) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../1-libaprutil1_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../3-libaprutil1-ldap_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.1-2) ...
+Selecting previously unselected package liblua5.2-0:amd64.
+Preparing to unpack .../4-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...
+Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../5-apache2-bin_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2-bin (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../6-apache2-utils_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2-utils (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../7-apache2-data_2.4.29-1ubuntu4.22_all.deb ...
+Unpacking apache2-data (2.4.29-1ubuntu4.22) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../8-apache2_2.4.29-1ubuntu4.22_amd64.deb ...
+Unpacking apache2 (2.4.29-1ubuntu4.22) ...
+Setting up libapr1:amd64 (1.6.3-2) ...
+Setting up apache2-data (2.4.29-1ubuntu4.22) ...
+Setting up libaprutil1:amd64 (1.6.1-2) ...
+Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-2) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Setting up apache2-utils (2.4.29-1ubuntu4.22) ...
+Setting up apache2-bin (2.4.29-1ubuntu4.22) ...
+Setting up apache2 (2.4.29-1ubuntu4.22) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+Processing triggers for systemd (237-3ubuntu10.42) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+jil@jil-VirtualBox:~$ ifconfig
+
+Command 'ifconfig' not found, but can be installed with:
+
+sudo apt install net-tools
+
+jil@jil-VirtualBox:~$ sudo apt install net-tools
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 359 not upgraded.
+Need to get 194 kB of archives.
+After this operation, 803 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 net-tools amd64 1.60+git20161116.90da8a0-1ubuntu1 [194 kB]
+Fetched 194 kB in 3s (63.0 kB/s)   
+Selecting previously unselected package net-tools.
+(Reading database ... 129157 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20161116.90da8a0-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+Setting up net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+jil@jil-VirtualBox:~$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::7f18:bf6f:28fc:ddca  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:fd:6b:61  txqueuelen 1000  (Ethernet)
+        RX packets 380328  bytes 566875260 (566.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24759  bytes 1819395 (1.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1644  bytes 143916 (143.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1644  bytes 143916 (143.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+jil@jil-VirtualBox:~$ sudo apt-get install links
+[sudo] password for jil: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  links
+0 upgraded, 1 newly installed, 0 to remove and 359 not upgraded.
+Need to get 499 kB of archives.
+After this operation, 2,142 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 links amd64 2.14-5build1 [499 kB]
+Fetched 499 kB in 2s (216 kB/s)
+Selecting previously unselected package links.
+(Reading database ... 129205 files and directories currently installed.)
+Preparing to unpack .../links_2.14-5build1_amd64.deb ...
+Unpacking links (2.14-5build1) ...
+Setting up links (2.14-5build1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+jil@jil-VirtualBox:~$ links
+
+                                     Best Linux Projects for Newbies (p1 of 7) 
+   Link: profile                                                               
+   Link: canonical                                                             
+   Link: shortlink                                                             
+   [IMG][IMG]                                                                  
+     * Home                                                                    
+     * Learning                                                                
+     * Subscribe!                                                              
+     * Write For Us                                                            
+     * Privacy                                                                 
+     * Terms                                                                   
+     *    * pe here to search..._ [ Submit ]                                   
+   Best of Linux                                                               
+                                                                               
+                        Best Linux Projects for Newbies                        
+                                                                               
+   2 years ago                                                                 
+   by David Morelo                                                             
+   Some people enjoy learning from books, and others like to gain knowledge    
+   and experience by working on interesting projects. If you belong to the     
+   latter category and you're new to Linux, our selection of the top 5 best    
+   Linux projects for newbies is just what you need to take your skills to     
+   the next level.                                                             
+                                                                               
+  1. Use Linux on Your Personal Computer                                       
+                                                                               
+   [IMG][IMG]                                                                  
+https://gmpg.org/xfn/11                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ fg links
+links
+
+                                     Best Linux Projects for Newbies (p1 of 7) 
+   Link: profile                                                               
+   Link: canonical                                                             
+   Link: shortlink                                                             
+   [IMG][IMG]                                                                  
+     * Home                                                                    
+     * Learning                                                                
+     * Subscribe!                                                              
+     * Write For Us                                                            
+     * Privacy                                                                 
+     * Terms                                                                   
+     *    * pe here to search..._ [ Submit ]                                   
+   Best of Linux                                                               
+                                                                               
+                        Best Linux Projects for Newbies                        
+                                                                               
+   2 years ago                                                                 
+   by David Morelo                                                             
+   Some people enjoy learning from books, and others like to gain knowledge    
+   and experience by working on interesting projects. If you belong to the     
+   latter category and you're new to Linux, our selection of the top 5 best    
+   Linux projects for newbies is just what you need to take your skills to     
+   the next level.                                                             
+                                                                               
+  1. Use Linux on Your Personal Computer                                       
+                                                                               
+   [IMG][IMG]                                                                  
+https://gmpg.org/xfn/11                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ fortune
+
+Command 'fortune' not found, but can be installed with:
+
+sudo apt install fortune-mod
+
+jil@jil-VirtualBox:~$ sudo apt install fortune-mod
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  fortunes-min librecode0
+Suggested packages:
+  fortunes
+The following NEW packages will be installed:
+  fortune-mod fortunes-min librecode0
+0 upgraded, 3 newly installed, 0 to remove and 359 not upgraded.
+Need to get 621 kB of archives.
+After this operation, 2,131 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 librecode0 amd64 3.6-23 [528 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 fortune-mod amd64 1:1.99.1-7build1 [37.3 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 fortunes-min all 1:1.99.1-7build1 [55.1 kB]
+Fetched 621 kB in 7s (94.6 kB/s)                                              
+Selecting previously unselected package librecode0:amd64.
+(Reading database ... 129212 files and directories currently installed.)
+Preparing to unpack .../librecode0_3.6-23_amd64.deb ...
+Unpacking librecode0:amd64 (3.6-23) ...
+Selecting previously unselected package fortune-mod.
+Preparing to unpack .../fortune-mod_1%3a1.99.1-7build1_amd64.deb ...
+Unpacking fortune-mod (1:1.99.1-7build1) ...
+Selecting previously unselected package fortunes-min.
+Preparing to unpack .../fortunes-min_1%3a1.99.1-7build1_all.deb ...
+Unpacking fortunes-min (1:1.99.1-7build1) ...
+Setting up fortunes-min (1:1.99.1-7build1) ...
+Setting up librecode0:amd64 (3.6-23) ...
+Setting up fortune-mod (1:1.99.1-7build1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+jil@jil-VirtualBox:~$ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.740_all.deb
+--2022-05-09 21:59:55--  http://prdownloads.sourceforge.net/webadmin/webmin_1.740_all.deb
+Resolving prdownloads.sourceforge.net (prdownloads.sourceforge.net)... 204.68.111.105
+Connecting to prdownloads.sourceforge.net (prdownloads.sourceforge.net)|204.68.111.105|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://downloads.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb [following]
+--2022-05-09 21:59:56--  http://downloads.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 204.68.111.105
+Reusing existing connection to prdownloads.sourceforge.net:80.
+HTTP request sent, awaiting response... 302 Found
+Location: http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb [following]
+--2022-05-09 21:59:56--  http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Resolving versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)... 162.251.232.173
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 24578284 (23M) [application/octet-stream]
+Saving to: ‘webmin_1.740_all.deb’
+
+webmin_1.740_all.de  76%[=============>     ]  17.93M  18.6KB/s    in 2m 28s  
+
+2022-05-09 22:02:26 (124 KB/s) - Read error at byte 18798879/24578284 (Connection reset by peer). Retrying.
+
+--2022-05-09 22:02:27--  (try: 2)  http://versaweb.dl.sourceforge.net/project/webadmin/webmin/1.740/webmin_1.740_all.deb
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:80... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 24578284 (23M), 5779405 (5.5M) remaining [application/octet-stream]
+Saving to: ‘webmin_1.740_all.deb’
+
+webmin_1.740_all.de 100%[++++++++++++++====>]  23.44M   133KB/s    in 53s     
+
+2022-05-09 22:03:22 (107 KB/s) - ‘webmin_1.740_all.deb’ saved [24578284/24578284]
+
+jil@jil-VirtualBox:~$ ls
+Desktop    Downloads         Music     Public     Videos
+Documents  examples.desktop  Pictures  Templates  webmin_1.740_all.deb
+jil@jil-VirtualBox:~$ sudo nano
+[sudo] password for jil: 
+jil@jil-VirtualBox:~$ 
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+16170 pts/0    00:00:01 links
+17129 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ fg links
+links
+
+                                 cool linux projects - Google Search (p1 of 2) 
+   Google                                                                      
+                                                                               
+   cool linux projects__ [ Search ]                                            
+                                                                               
+   ALL IMAGES NEWS VIDEOS                                                      
+                                                                               
+   linux terminal emulatorfedoramintcomputercommandeditorstext editorfedora    
+   linuxcommand linecommand prompt                                             
+                                                                               
+[IMG]                   [IMG]                          [IMG]                   
+Best Linux Projects     Top 5 Coolest Projects For...  Top 5 Coolest Projects  
+for... linuxhint.com    www.linuxfordevices.com        For...                  
+                                                       www.linuxfordevices.com 
+[IMG]                   [IMG]                          [IMG]                   
+Top 5 Coolest Projects  Top 15 Linux Projects For...   Top 5 Coolest Projects  
+For...                  www.cselectricalandelectron... For...                  
+www.linuxfordevices.com                                www.linuxfordevices.com 
+[IMG]                   [IMG]                          [IMG]                   
+Linux Toys: 13 Cool...  4 easy Linux projects for...   The Best Linux          
+www.wiley.com           www.pcworld.com                Tutorials               
+                                                       www.freecodecamp.org    
+[IMG]                   [IMG]                          [IMG]                   
+Cool Linux Projects     11 Best Linux Distros For...   Linux� Toys: 13 Cool... 
+that... www.reddit.com  fossbytes.com                  www.amazon.in           
+                                                                               
+[IMG]                   [IMG]                          [IMG]                   
+https://www.google.co.in/url?q=https://linuxhint.com/best_linux_projects_newbi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+[1]+  Stopped                 links
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+16170 pts/0    00:00:01 links
+17132 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ sudo kill -9 16170
+[1]+  Killed                  links
+jil@jil-VirtualBox:~$ ps
+  PID TTY          TIME CMD
+ 1973 pts/0    00:00:00 bash
+17137 pts/0    00:00:00 ps
+jil@jil-VirtualBox:~$ sudo samba service restart
+[sudo] password for jil: 
+jil@jil-VirtualBox:~$ sudo service samba restart
+Failed to restart samba.service: Unit samba.service not found.
+jil@jil-VirtualBox:~$ 12345678
+12345678: command not found
+jil@jil-VirtualBox:~$ sudo service samba status
+Unit samba.service could not be found.
+jil@jil-VirtualBox:~$ ^C
+jil@jil-VirtualBox:~$ ^C
+jil@jil-VirtualBox:~$ 
+
